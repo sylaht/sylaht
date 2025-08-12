@@ -14,7 +14,6 @@ typedef struct {
 SoftwareDeveloper software_developer() {
     SoftwareDeveloper me;
 
-    
     snprintf(me.name, sizeof(me.name), "Thalys Leite");
 
     time_t now = time(NULL);
