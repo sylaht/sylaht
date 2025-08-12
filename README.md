@@ -17,7 +17,6 @@ SoftwareDeveloper software_developer() {
     
     snprintf(me.name, sizeof(me.name), "Thalys Leite");
 
-    // Calcula idade com base no ano atual
     time_t now = time(NULL);
     struct tm *t = localtime(&now);
     int current_year = t->tm_year + 1900;
