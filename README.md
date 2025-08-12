@@ -1,19 +1,46 @@
 # Hey there! <br />
 
-```typescript
-function frontend_developer() {
-  const NAME = 'Thalys Leite'
-  const AGE = new Date().getFullYear() - 2000
-  const CURRENT_ROLE = null
+```c
+#include <stdio.h>
+#include <time.h>
 
-  const HOBBIES = 'Travel to incredible (or not so incredible) places.'
+typedef struct {
+    char name[50];
+    int age;
+    char hobbies[100];
+    char current_role[50];
+} SoftwareDeveloper;
 
-  return { NAME, AGE, HOBBIES, CURRENT_ROLE }
+SoftwareDeveloper software_developer() {
+    SoftwareDeveloper me;
+
+    
+    snprintf(me.name, sizeof(me.name), "Thalys Leite");
+
+    // Calcula idade com base no ano atual
+    time_t now = time(NULL);
+    struct tm *t = localtime(&now);
+    int current_year = t->tm_year + 1900;
+    me.age = current_year - 2000;
+
+    snprintf(me.hobbies, sizeof(me.hobbies), "Travel to incredible (or not so incredible) places.");
+
+    snprintf(me.current_role, sizeof(me.current_role), "Software Developer");
+
+    return me;
 }
 
-const me = frontend_developer()
+int main() {
+    SoftwareDeveloper me = software_developer();
 
-console.log(me)
+    printf("Name: %s\n", me.name);
+    printf("Age: %d\n", me.age);
+    printf("Hobbies: %s\n", me.hobbies);
+    printf("Current Role: %s\n", me.current_role);
+
+    return 0;
+}
+
 ```
 
 ## ✨ Technologies
